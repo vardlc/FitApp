@@ -1,37 +1,3 @@
-/* h1 {
-    color: #2c3e50;
-}
-
-h2 {
-    color: #34495e;
-}
-
-input {
-    padding: 8px;
-    width: 250px;
-    margin-top: 5px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #2980b9;
-}
-
-a {
-    color: #3498db;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-} */
 /* Reset básico */
 * {
   margin: 0;
@@ -100,6 +66,26 @@ a:hover {
   to {
     transform: rotate(360deg);
   }
+}
+
+.datos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 25px;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.input-icon {
+  height: 1.3em;
+  width: 1.3em;
+  fill: rgb(0, 255, 200);
 }
 
 /* Caja central futurista */

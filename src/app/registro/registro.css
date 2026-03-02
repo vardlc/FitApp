@@ -1,0 +1,62 @@
+/* Tarjeta */
+main {
+  background: #ffffff;
+  color: #333;
+  width: 100%;
+  max-width: 700px;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+/* Títulos */
+h2, h3 {
+  margin-top: 0;
+}
+
+/* Formulario */
+form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+/* Inputs */
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Sección datos de salud*/
+.salud-grid {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.salud-grid div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Botón */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #277dc4, #7b2ff7);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+a {
+  color: #7b2ff7;
+  text-decoration: none;
+  font-weight: bold;
+}
