@@ -1,64 +1,75 @@
 <section class="registro-container">
-  <header>
-    <h1>Únete a HealthTrack</h1>
-    <p>Crea tu cuenta y comienza tu viaje de salud</p>
-  </header>
 
-  <main>
-    <h2>Crear Cuenta</h2>
+  <div class="registro-card">
 
-    <form>
-      <div>
-        <label for="nombre">Nombre Completo</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Juan Pérez" />
+    <!-- PANEL CUENTA -->
+    <div class="panel panel-cuenta">
+
+      <div class="panel-header">
+        <h1>HealthTrack</h1>
+        <p>Crear cuenta</p>
       </div>
 
-      <div>
-        <label for="correo">Correo Electrónico</label>
-        <input type="email" id="correo" name="correo" placeholder="tu@email.com" />
-      </div>
+      <form class="form-cuenta">
 
-      <div>
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" name="password" placeholder="********" />
-      </div>
+        <div class="input-group">
+          <label>Nombre completo</label>
+          <input type="text" [(ngModel)]="nombre" name="nombre" placeholder="Juan Pérez">
+        </div>
 
-      <div>
-        <label for="confirmarPassword">Confirmar Contraseña</label>
-        <input
-          type="password"
-          id="confirmarPassword"
-          placeholder="********"
-        />
-      </div>
+        <div class="input-group">
+          <label>Correo electrónico</label>
+          <input type="email" [(ngModel)]="correo" name="correo" placeholder="correo@email.com">
+        </div>
 
-      <hr />
+        <div class="input-group">
+          <label>Contraseña</label>
+          <input type="password" [(ngModel)]="password" name="password" placeholder="••••••••">
+        </div>
 
-      <h3>Datos de Salud</h3>
+        <div class="input-group">
+          <label>Confirmar contraseña</label>
+          <input type="password" [(ngModel)]="confirmarPassword" name="confirmarPassword">
+        </div>
+
+      </form>
+
+    </div>
+
+
+    <!-- PANEL SALUD -->
+    <div class="panel panel-salud" *ngIf="formCompleto()">
+
+      <h2>Datos de Salud</h2>
 
       <div class="salud-grid">
-        <div>
-          <label for="peso">Peso (kg)</label>
-          <input type="number" id="peso" formControlName="peso" />
+
+        <div class="input-group">
+          <label>Peso (kg)</label>
+          <input type="number">
         </div>
 
-        <div>
-          <label for="altura">Altura (cm)</label>
-          <input type="number" id="altura" formControlName="altura" />
+        <div class="input-group">
+          <label>Altura (cm)</label>
+          <input type="number">
         </div>
 
-        <div>
-          <label for="edad">Edad (años)</label>
-          <input type="number" id="edad" formControlName="edad" />
+        <div class="input-group">
+          <label>Edad</label>
+          <input type="number">
         </div>
+
       </div>
 
-      <button type="submit">Crear Cuenta</button>
-    </form>
+      <button>Crear Cuenta</button>
 
-    <p>
-      ¿Ya tienes una cuenta?
-      <a routerLink="./login">Inicia sesión</a>
-    </p>
-  </main>
+    </div>
+
+  </div>
+
+  <p class="login-link">
+    ¿Ya tienes cuenta?
+    <a routerLink="./login">Inicia sesión</a>
+  </p>
+
 </section>
