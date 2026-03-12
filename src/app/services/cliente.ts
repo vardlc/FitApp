@@ -4,19 +4,22 @@ import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ClienteService {
-
   private authURL = environment.apiURL + '/api/Auth';
 
   constructor(private http: HttpClient) {}
 
-  login(data:any): Observable<any>{
+  login(data: any): Observable<any> {
     return this.http.post(`${this.authURL}/login`, data);
   }
 
-  register(data:any): Observable<any>{
+  register(data: any): Observable<any> {
     return this.http.post(`${this.authURL}/register`, data);
+  }
+
+  recuperarPassword(data: any): Observable<any> {
+    return this.http.post(`${this.authURL}/reset-password`, data);
   }
 }

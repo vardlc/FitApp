@@ -102,54 +102,37 @@
           ></path>
         </svg>
       </div>
-        <h1>HealthTrack</h1>
+      <h1>HealthTrack</h1>
     </div>
 
     <div class="login">
-  <h2>Restablecer contraseña</h2>
+      <h2>Restablecer contraseña</h2>
 
-  <!-- EMAIL -->
-  <div class="input-group">
-    <input type="email" required />
-    <label>Correo electrónico</label>
-    <span class="input-bar"></span>
-  </div>
+      <form (ngSubmit)="cambiarPassword()">
+        <div class="input-group">
+          <input type="email" name="correo" [(ngModel)]="correo" required />
+          <label>Correo electrónico</label>
+          <span class="input-bar"></span>
+        </div>
 
-  <!-- NUEVA CONTRASEÑA -->
-  <div class="input-group">
-    <input type="password" required />
-    <label>Nueva contraseña</label>
-    <span class="input-bar"></span>
-  </div>
+        <div class="input-group">
+          <input type="password" name="password" [(ngModel)]="password" required />
+          <label>Nueva contraseña</label>
+          <span class="input-bar"></span>
+        </div>
 
-  <!-- CONFIRMAR CONTRASEÑA -->
-  <div class="input-group">
-    <input type="password" required />
-    <label>Confirmar contraseña</label>
-    <span class="input-bar"></span>
-  </div>
+        <div class="input-group">
+          <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" required />
+          <label>Confirmar contraseña</label>
+          <span class="input-bar"></span>
+        </div>
 
-  <!-- BOTONES -->
-  <div class="botones">
+        <div class="botones">
+          <button type="button" class="Regresar" routerLink="/login">Regresar</button>
 
-    <button class="Regresar">
-      Regresar
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <button class="iniciar">
-      Cambiar <br> contraseña
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-  </div>
-
-</div>
+          <button type="submit" class="iniciar">Cambiar contraseña</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

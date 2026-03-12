@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { ClienteService } from '../../services/cliente';
 import { Router } from '@angular/router';
 import { take } from 'rxjs/operators';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterModule],
   templateUrl: './login.html',
   styleUrls: ['./login.css'],
 })

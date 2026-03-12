@@ -196,74 +196,59 @@
     </div>
 
     <div class="login">
-  <h2>Registro</h2>
+      <h2>Registro</h2>
 
-  <div class="form-grid">
+      <form (ngSubmit)="registrar()">
+        <div class="form-grid">
+          <div class="input-group">
+            <input type="text" name="nombre" [(ngModel)]="nombre" required />
+            <label>Nombre completo</label>
+            <span class="input-bar"></span>
+          </div>
 
-    <div class="input-group">
-      <input type="text" required />
-      <label>Nombre completo</label>
-      <span class="input-bar"></span>
+          <div class="input-group">
+            <input type="number" name="edad" [(ngModel)]="edad" required />
+            <label>Edad</label>
+            <span class="input-bar"></span>
+          </div>
+
+          <div class="input-group">
+            <input type="email" name="correo" [(ngModel)]="correo" required />
+            <label>Correo electrónico</label>
+            <span class="input-bar"></span>
+          </div>
+
+          <div class="input-group">
+            <input type="number" name="estatura" [(ngModel)]="estatura" required />
+            <label>Estatura (cm)</label>
+            <span class="input-bar"></span>
+          </div>
+
+          <div class="input-group">
+            <input type="password" name="password" [(ngModel)]="password" required />
+            <label>Contraseña</label>
+            <span class="input-bar"></span>
+          </div>
+
+          <div class="input-group">
+            <input type="number" name="peso" [(ngModel)]="peso" required />
+            <label>Peso (kg)</label>
+            <span class="input-bar"></span>
+          </div>
+
+          <div class="input-group">
+            <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" required />
+            <label>Confirmar contraseña</label>
+            <span class="input-bar"></span>
+          </div>
+        </div>
+
+        <div class="botones">
+          <button type="button" class="Regresar" routerLink="/login">Regresar</button>
+
+          <button type="submit" class="iniciar">Registrarse</button>
+        </div>
+      </form>
     </div>
-
-    <div class="input-group">
-      <input type="number" required />
-      <label>Edad</label>
-      <span class="input-bar"></span>
-    </div>
-
-    <div class="input-group">
-      <input type="email" required />
-      <label>Correo electrónico</label>
-      <span class="input-bar"></span>
-    </div>
-
-    <div class="input-group">
-      <input type="number" required />
-      <label>Estatura (cm)</label>
-      <span class="input-bar"></span>
-    </div>
-
-    <div class="input-group">
-      <input type="password" required />
-      <label>Contraseña</label>
-      <span class="input-bar"></span>
-    </div>
-
-    <div class="input-group">
-      <input type="number" required />
-      <label>Peso (kg)</label>
-      <span class="input-bar"></span>
-    </div>
-
-    <div class="input-group">
-      <input type="password" required />
-      <label>Confirmar contraseña</label>
-      <span class="input-bar"></span>
-    </div>
-
-  </div>
-
-  <div class="botones">
-
-  <button class="Regresar">
-    Regresar
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-  <button class="iniciar">
-    Registrarse
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-</div>
-
-</div>
   </div>
 </div>
