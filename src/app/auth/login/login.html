@@ -102,53 +102,40 @@
           ></path>
         </svg>
       </div>
-<h1>HealthTrack</h1>
+      <h1>HealthTrack</h1>
       <p>Tu compañero de salud y bienestar</p>
     </div>
 
     <div class="login">
       <h2>Iniciar Sesión</h2>
+      <form (ngSubmit)="login()" #form="ngForm">
+        <!-- EMAIL -->
+        <div class="input-group">
+          <input type="email" required [(ngModel)]="email" name="email" />
+          <label>Correo electrónico</label>
+          <span class="input-bar"></span>
+        </div>
 
-      <!-- EMAIL -->
-      <div class="input-group">
-        <input 
-          type="email" 
-          required 
-          [(ngModel)]="email"
-          name="email"
-        />
-        <label>Correo electrónico</label>
-        <span class="input-bar"></span>
-      </div>
+        <!-- PASSWORD -->
+        <div class="input-group">
+          <input type="password" required [(ngModel)]="password" name="password" />
+          <label>Contraseña</label>
+          <span class="input-bar"></span>
+        </div>
 
-      <!-- PASSWORD -->
-      <div class="input-group">
-        <input 
-          type="password" 
-          required 
-          [(ngModel)]="password"
-          name="password"
-        />
-        <label>Contraseña</label>
-        <span class="input-bar"></span>
-      </div>
+        <div class="recuperar-contrasena">
+          <a href="#">¿Olvidaste tu contraseña?</a>
+        </div>
 
-      <div class="recuperar-contrasena">
-        <a href="#">¿Olvidaste tu contraseña?</a>
-      </div>
-
-      <!-- BOTON LOGIN -->
-      <button 
-        class="iniciar"
-        (click)="login()"
-      >
-        Iniciar Sesión
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
+        <!-- BOTON LOGIN -->
+        <button class="iniciar" type="submit">
+          Iniciar Sesión
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </form>
       <div class="registro" id="registro">
         ¿No tienes cuenta?
         <a href="#">Regístrate aquí</a>

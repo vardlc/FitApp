@@ -8,15 +8,15 @@ import { Observable } from 'rxjs';
 })
 export class ClienteService {
 
-  private apiURL = environment.apiURL + '/api/Clientes';
+  private authURL = environment.apiURL + '/api/Auth';
 
   constructor(private http: HttpClient) {}
 
-  getClientes(): Observable<any> {
-    return this.http.get(this.apiURL);
+  login(data:any): Observable<any>{
+    return this.http.post(`${this.authURL}/login`, data);
   }
 
-  login(data:any): Observable<any>{
-    return this.http.post(environment.apiURL + '/api/Auth/login', data);
+  register(data:any): Observable<any>{
+    return this.http.post(`${this.authURL}/register`, data);
   }
 }
