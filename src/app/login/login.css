@@ -78,8 +78,6 @@
   border: none;
   outline: none;
   color: white;
-  background-color: #171717;
-  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
 }
 
 .input-icon {
@@ -133,6 +131,178 @@
   color: #aef;
 }
 
+.input-group{
+  position: relative;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.input-group input{
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255,255,255,0.35);
+  padding: 16px 0 6px 0; /* más espacio arriba */
+  font-size: 16px;
+  color: white;
+  outline: none;
+}
+
+/* LABEL */
+.input-group label{
+  position: absolute;
+  left: 0;
+  top: -2px; /* antes 12px */
+  font-size: 15px;
+  color: rgba(255,255,255,0.7);
+  pointer-events: none;
+  transition: 0.25s ease;
+}
+
+/* cuando escribes */
+.input-group input:focus + label,
+.input-group input:valid + label{
+  top: -20px;
+  font-size: 12px;
+  color: #7fffd4;
+}
+
+/* barra */
+.input-bar{
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+}
+
+.input-bar::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 100%;
+  background: #7fffd4;
+  box-shadow: 0 0 8px #7fffd4, 0 0 15px #7fffd4;
+  transition: width 0.35s ease;
+}
+
+.input-group input:focus ~ .input-bar::after{
+  width: 100%;
+}
+
+
+.iniciar{
+  position: relative;
+  padding: 14px 40px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  color: #aef;
+  background: rgba(0, 30, 40, 0.7);
+  border: none;
+  border-radius: 6px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 0 10px rgba(0,255,255,0.3),
+    inset 0 0 10px rgba(0,255,255,0.2);
+
+  transition: all .3s ease;
+}
+
+/* efecto al pasar el mouse */
+.iniciar:hover{
+  background: rgba(0, 40, 60, 0.9);
+
+  box-shadow:
+    0 0 15px cyan,
+    0 0 30px cyan,
+    inset 0 0 10px rgba(0,255,255,0.4);
+
+  transform: translateY(-2px);
+}
+
+/* efecto al hacer click */
+.iniciar:active{
+  transform: translateY(1px);
+  box-shadow:
+    0 0 8px cyan,
+    inset 0 0 8px rgba(0,255,255,0.5);
+}
+
+.iniciar span{
+  position: absolute;
+  display: block;
+}
+
+/* línea superior */
+.iniciar span:nth-child(1){
+  top:0;
+  left:0;
+  width:100%;
+  height:2px;
+  background: linear-gradient(to left, transparent, cyan);
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  animation: lineaArriba 2s linear infinite;
+}
+
+@keyframes lineaArriba{
+  0%{transform: translateX(100%);}
+  100%{transform: translateX(-100%);}
+}
+
+/* línea derecha */
+.iniciar span:nth-child(2){
+  top:0;
+  right:0;
+  width:2px;
+  height:100%;
+  background: linear-gradient(to top, transparent, cyan);
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  animation: lineaDerecha 2s linear -1s infinite;
+}
+
+@keyframes lineaDerecha{
+  0%{transform: translateY(100%);}
+  100%{transform: translateY(-100%);}
+}
+
+/* línea inferior */
+.iniciar span:nth-child(3){
+  bottom:0;
+  left:0;
+  width:100%;
+  height:2px;
+  background: linear-gradient(to right, transparent, cyan);
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  animation: lineaAbajo 2s linear infinite;
+}
+
+@keyframes lineaAbajo{
+  0%{transform: translateX(-100%);}
+  100%{transform: translateX(100%);}
+}
+
+/* línea izquierda */
+.iniciar span:nth-child(4){
+  top:0;
+  left:0;
+  width:2px;
+  height:100%;
+  background: linear-gradient(to bottom, transparent, cyan);
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  animation: lineaIzquierda 2s linear -1s infinite;
+}
+
+@keyframes lineaIzquierda{
+  0%{transform: translateY(-100%);}
+  100%{transform: translateY(100%);}
+}
 
 /* Animaciones */
 @keyframes moveGradient {
