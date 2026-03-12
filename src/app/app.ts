@@ -7,9 +7,11 @@ import { ClienteService } from './services/cliente';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, CommonModule],
-  templateUrl: './app.html',
-  styleUrls: ['./app.css'],
+  templateUrl:'./app.html',
+  styleUrl:'./app.html',
 })
+
+
 export class App implements OnInit {
   clientes: any[] = [];
 
