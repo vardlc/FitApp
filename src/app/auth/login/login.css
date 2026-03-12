@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -142,24 +141,23 @@
   background: transparent;
   border: none;
   border-bottom: 2px solid rgba(255,255,255,0.35);
-  padding: 16px 0 6px 0; /* más espacio arriba */
+  padding: 16px 0 6px 0;
   font-size: 16px;
   color: white;
   outline: none;
 }
 
-/* LABEL */
+/* label */
 .input-group label{
   position: absolute;
   left: 0;
-  top: -2px; /* antes 12px */
+  top: -2px;
   font-size: 15px;
   color: rgba(255,255,255,0.7);
   pointer-events: none;
   transition: 0.25s ease;
 }
 
-/* cuando escribes */
 .input-group input:focus + label,
 .input-group input:valid + label{
   top: -20px;
@@ -192,6 +190,10 @@
   width: 100%;
 }
 
+.recuperar-contrasena{
+  top: 20px;
+  padding: 30px;
+}
 
 .iniciar{
   position: relative;
@@ -215,7 +217,7 @@
   transition: all .3s ease;
 }
 
-/* efecto al pasar el mouse */
+/* efecto con el cursor */
 .iniciar:hover{
   background: rgba(0, 40, 60, 0.9);
 
@@ -227,7 +229,6 @@
   transform: translateY(-2px);
 }
 
-/* efecto al hacer click */
 .iniciar:active{
   transform: translateY(1px);
   box-shadow:

@@ -15,4 +15,8 @@ export class ClienteService {
   getClientes(): Observable<any> {
     return this.http.get(this.apiURL);
   }
+
+  login(data:any): Observable<any>{
+    return this.http.post(environment.apiURL + '/api/Auth/login', data);
+  }
 }
