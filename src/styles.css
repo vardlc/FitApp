@@ -10,8 +10,12 @@ body {
   justify-content: center;
   align-items: center;
   background: radial-gradient(circle at center, #0ff, #002233 80%);
+<<<<<<< HEAD
+  overscroll-behavior: none;
+=======
   overflow-x: hidden;
   overflow-y: auto;
+>>>>>>> 61ba2210faf92f50bd995049c73512ce3646c269
   font-family: 'Segoe UI', sans-serif;
   color: white;
 }
