@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  overscroll-behavior: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #0ff, #002233 80%);
+  overscroll-behavior: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+/* Fondo animado */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: moveGradient 8s infinite alternate ease-in-out;
+  z-index: -2;
+}

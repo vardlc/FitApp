@@ -1,0 +1,422 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* From Uiverse.io by Nawsome */ 
+.svg-frame {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-left: 70px;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg-frame svg {
+  position: absolute;
+  transition: .5s;
+  z-index: calc(1 - (0.2 * var(--j)));
+  transform-origin: center;
+  width: 344px;
+  height: 344px;
+  fill: none;
+}
+
+.svg-frame:hover svg {
+  transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i))) translateY(calc(-35px * var(--i)));
+}
+
+.svg-frame svg #center {
+  transition: .5s;
+  transform-origin: center;
+}
+
+.svg-frame:hover svg #center {
+  transform: rotate(-30deg) translateX(45px) translateY(-3px);
+}
+
+#out2 {
+  animation: rotate16 7s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+#out3 {
+  animation: rotate16 3s ease-in-out infinite alternate;
+  transform-origin: center;
+  stroke: #ff0;
+}
+
+#inner3,
+#inner1 {
+  animation: rotate16 4s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+#center1 {
+  fill: #ff0;
+  animation: rotate16 2s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes rotate16 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.datos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 25px;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.input-icon {
+  height: 1.3em;
+  width: 1.3em;
+  fill: rgb(0, 255, 200);
+}
+
+/* Caja central futurista */
+.panel {
+  padding: 2rem 3rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(0, 255, 255, 0.6);
+  border-radius: 15px;
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.8),
+    inset 0 0 10px rgba(0, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.panel h1 {
+  font-size: 2rem;
+  text-shadow:
+    0 0 10px cyan,
+    0 0 20px cyan;
+}
+
+.panel h2 {
+  font-size: 2rem;
+  text-shadow:
+    0 0 10px cyan,
+    0 0 20px cyan;
+}
+
+.panel p {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #aef;
+}
+
+.panel label {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #aef;
+}
+
+#registro{
+      margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #aef;
+}
+
+.input-group{
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.input-group input{
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255,255,255,0.35);
+  padding: 16px 0 6px 0;
+  font-size: 16px;
+  color: white;
+  outline: none;
+}
+
+/* label */
+.input-group label{
+  position: absolute;
+  left: 0;
+  top: -2px;
+  font-size: 15px;
+  color: rgba(255,255,255,0.7);
+  pointer-events: none;
+  transition: 0.25s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label{
+  top: -20px;
+  font-size: 12px;
+  color: #7fffd4;
+}
+
+/* barra */
+.input-bar{
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+}
+
+.input-bar::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 100%;
+  background: #7fffd4;
+  box-shadow: 0 0 8px #7fffd4, 0 0 15px #7fffd4;
+  transition: width 0.35s ease;
+}
+
+.input-group input:focus ~ .input-bar::after{
+  width: 100%;
+}
+
+.recuperar-contrasena{
+  top: 20px;
+  padding: 30px;
+}
+
+.iniciar{
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+
+.iniciar{
+  position: relative;
+  padding: 14px 40px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  color: #aef;
+  background: rgba(0, 30, 40, 0.7);
+  border: none;
+  border-radius: 6px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 0 10px rgba(0,255,255,0.3),
+    inset 0 0 10px rgba(0,255,255,0.2);
+
+  transition: all .3s ease;
+}
+
+/* efecto con el cursor */
+.iniciar:hover{
+  background: rgba(0, 40, 60, 0.9);
+
+  box-shadow:
+    0 0 15px cyan,
+    0 0 30px cyan,
+    inset 0 0 10px rgba(0,255,255,0.4);
+
+  transform: translateY(-2px);
+}
+
+.iniciar:active{
+  transform: translateY(1px);
+  box-shadow:
+    0 0 8px cyan,
+    inset 0 0 8px rgba(0,255,255,0.5);
+}
+
+.iniciar span{
+  position: absolute;
+  display: block;
+}
+
+/* línea superior */
+.iniciar span:nth-child(1){
+  top:0;
+  left:0;
+  width:100%;
+  height:2px;
+  background: linear-gradient(to left, transparent, cyan);
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  animation: lineaArriba 2s linear infinite;
+}
+
+@keyframes lineaArriba{
+  0%{transform: translateX(100%);}
+  100%{transform: translateX(-100%);}
+}
+
+/* línea derecha */
+.iniciar span:nth-child(2){
+  top:0;
+  right:0;
+  width:2px;
+  height:100%;
+  background: linear-gradient(to top, transparent, cyan);
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  animation: lineaDerecha 2s linear -1s infinite;
+}
+
+@keyframes lineaDerecha{
+  0%{transform: translateY(100%);}
+  100%{transform: translateY(-100%);}
+}
+
+/* línea inferior */
+.iniciar span:nth-child(3){
+  bottom:0;
+  left:0;
+  width:100%;
+  height:2px;
+  background: linear-gradient(to right, transparent, cyan);
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  animation: lineaAbajo 2s linear infinite;
+}
+
+@keyframes lineaAbajo{
+  0%{transform: translateX(-100%);}
+  100%{transform: translateX(100%);}
+}
+
+/* línea izquierda */
+.iniciar span:nth-child(4){
+  top:0;
+  left:0;
+  width:2px;
+  height:100%;
+  background: linear-gradient(to bottom, transparent, cyan);
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  animation: lineaIzquierda 2s linear -1s infinite;
+}
+
+@keyframes lineaIzquierda{
+  0%{transform: translateY(-100%);}
+  100%{transform: translateY(100%);}
+}
+
+/* Animaciones */
+@keyframes moveGradient {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+}
+
+@keyframes moveStars {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50px, -50px);
+  }
+}
+
+.Regresar{
+  position: relative;
+  padding: 14px 40px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  color: #aef;
+  background: rgba(0, 30, 40, 0.7);
+  border: none;
+  border-radius: 6px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 0 10px rgba(0,255,255,0.3),
+    inset 0 0 10px rgba(0,255,255,0.2);
+
+  transition: all .3s ease;
+}
+
+/* efecto al pasar el mouse */
+.Regresar:hover{
+  background: rgba(0, 40, 60, 0.9);
+
+  box-shadow:
+    0 0 15px cyan,
+    0 0 30px cyan,
+    inset 0 0 10px rgba(0,255,255,0.4);
+
+  transform: translateY(-2px);
+}
+
+
+.Regresar:active{
+  transform: translateY(1px);
+  box-shadow:
+    0 0 8px cyan,
+    inset 0 0 8px rgba(0,255,255,0.5);
+}
+
+.Regresar span{
+  position: absolute;
+  display: block;
+}
+
+
+
+.Regresar  span:nth-child(1){
+  top:0;
+  left:0;
+  width:100%;
+  height:2px;
+  background: linear-gradient(to left, transparent, cyan);
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  animation: lineaArriba 2s linear infinite;
+}
+
+.Regresar span:nth-child(2){
+  top:0;
+  right:0;
+  width:2px;
+  height:100%;
+  background: linear-gradient(to top, transparent, cyan);
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  animation: lineaDerecha 2s linear -1s infinite;
+}
+
+.Regresar span:nth-child(3){
+  bottom:0;
+  left:0;
+  width:100%;
+  height:2px;
+  background: linear-gradient(to right, transparent, cyan);
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  animation: lineaAbajo 2s linear infinite;
+}
+
+.Regresar span:nth-child(4){
+  top:0;
+  left:0;
+  width:2px;
+  height:100%;
+  background: linear-gradient(to bottom, transparent, cyan);
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  animation: lineaIzquierda 2s linear -1s infinite;
+}

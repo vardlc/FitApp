@@ -1,11 +1,16 @@
+
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClienteService } from './services/cliente';
+import { RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [RouterOutlet, CommonModule],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
   template: `
     <h1>Clientes</h1>
     <ul>
@@ -28,3 +33,4 @@ export class App implements OnInit {
     });
   }
 }
+

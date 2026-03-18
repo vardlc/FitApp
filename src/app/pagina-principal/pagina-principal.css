@@ -1,0 +1,324 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* card de usuario */
+
+.user-card {
+  background: linear-gradient(90deg, #0c1a3500, #240a3800);
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  background: #0a0f1f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.toggle-btn {
+  background: #0a0f1f;
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* stats */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stat {
+  background: #0a0f1f;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.stat p {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.stat h3 {
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.stat span {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* smartwacht */
+
+.smartwatch {
+  background: #0b0f1f;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.section-title {
+  margin-bottom: 20px;
+  color: #fb923c;
+}
+
+.watch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.watch-card {
+  background: #05070f;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.watch-card p {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.watch-card h2 {
+  margin-top: 10px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.blue {
+  color: #4da6ff;
+}
+.purple {
+  color: #9b59ff;
+}
+.pink {
+  color: #ff6fa8;
+}
+.orange {
+  color: #ff9f43;
+}
+.green {
+  color: #2ecc71;
+}
+.indigo {
+  color: #6c5ce7;
+}
+.heart {
+  color: #ff4d6d;
+}
+
+.imc-card {
+  background: #0b0f1f;
+  padding: 25px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imc-info p {
+  color: #9ca3af;
+}
+
+.imc-info h1 {
+  font-size: 40px;
+  margin-top: 5px;
+}
+
+.status {
+  background: #16a34a;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* calendario */
+
+.calendar {
+  background: #0b0f1f;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-bottom: 10px;
+  color: #9ca3af;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.day {
+  height: 40px;
+  background: #05070f;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.day.completed {
+  background: #16a34a;
+}
+
+.calendar-legend {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #9ca3af;
+  display: flex;
+  gap: 20px;
+}
+
+.box {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+.box.completed {
+  background: #16a34a;
+}
+
+.box.today {
+  border: 2px solid #00e0ff;
+}
+
+/* ejercicios */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.exercise-card {
+  background: #05070f;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+}
+
+.exercise-card:hover {
+  transform: translateY(-6px);
+}
+
+.exercise-card h4 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.exercise-card p {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.pesas .icon-box {
+  background: #ff5a1f;
+}
+
+.atletismo .icon-box {
+  background: #0ea5e9;
+}
+
+.ciclismo .icon-box {
+  background: #22c55e;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* botones */
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pesas button {
+  background: linear-gradient(90deg, #ff7a18, #ff2d00);
+}
+
+.atletismo button {
+  background: linear-gradient(90deg, #06b6d4, #2563eb);
+}
+
+.ciclismo button {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
