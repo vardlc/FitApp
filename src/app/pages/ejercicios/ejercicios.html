@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="header">
+    <button class="btn-back" routerLink="/pagina_principal">← Volver</button>
+
+    <div class="title">
+      <h1>Entrenamiento de {{ tipo | titlecase }}</h1>
+      <div class="meta">
+        <span>⏱ {{ totalTiempo }} min</span>
+        <span>🔥 {{ totalCalorias }} kcal</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="lista">
+      <div class="lista-header">
+        <h2>Lista de Ejercicios</h2>
+        <div class="actions">
+          <button (click)="seleccionarTodos()">Seleccionar todos</button>
+          <button (click)="limpiarSeleccion()">Limpiar</button>
+        </div>
+      </div>
+
+      <div
+        class="card"
+        *ngFor="let ejercicio of ejercicios"
+        [class.selected]="ejercicio.selected"
+        (click)="toggleSeleccion(ejercicio)"
+      >
+        <div class="check">
+          <input type="checkbox" [(ngModel)]="ejercicio.selected" />
+        </div>
+
+        <div class="info">
+          <h3>{{ ejercicio.nombre }}</h3>
+          <p>{{ ejercicio.descripcion }}</p>
+
+          <div class="details">
+            <span>⏱ {{ ejercicio.tiempo }} min</span>
+            <span>🔥 {{ ejercicio.calorias }} kcal</span>
+            <span>{{ ejercicio.series }} series</span>
+            <span>{{ ejercicio.reps }} reps</span>
+          </div>
+        </div>
+
+        <div class="nivel" [ngClass]="ejercicio.nivel.toLowerCase()">
+          {{ ejercicio.nivel }}
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="panel">
+        <h3>Tu Rutina</h3>
+
+        <div class="stat">
+          <p>Ejercicios seleccionados</p>
+          <h2>{{ ejerciciosSeleccionados.length }}</h2>
+        </div>
+
+        <div class="stat calorias">
+          <p>Calorías totales</p>
+          <h2>{{ totalCaloriasSeleccionadas }} kcal</h2>
+        </div>
+
+        <button class="btn-start">Iniciar Rutina ({{ ejerciciosSeleccionados.length }})</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,9 @@
 import { Routes } from '@angular/router';
 import { Login } from './auth/login/login';
 import { Registro } from './auth/registro/registro';
-import { PaginaPrincipal } from './pagina-principal/pagina-principal';
+import { PaginaPrincipal } from './pages/pagina-principal/pagina-principal';
 import { RecuperarContrasena } from './auth/recuperar-contrasena/recuperar-contrasena';
+import { Ejercicios } from './pages/ejercicios/ejercicios';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -10,6 +11,6 @@ export const routes: Routes = [
   { path: 'registro', component: Registro},
   { path: 'recuperar-contrasena', component: RecuperarContrasena},
   { path: 'pagina_principal', component: PaginaPrincipal},
-  { path: 'pagina_principal', component: PaginaPrincipal},
-  { path: 'recuperarContrasena', component: RecuperarContrasena }
+  { path: 'recuperarContrasena', component: RecuperarContrasena },
+  { path: 'ejercicios/:tipo', component: Ejercicios}
 ];
