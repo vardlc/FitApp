@@ -21,6 +21,108 @@
         </div>
       </div>
 
+      <!-- Iteración de ejercicios -->
+      <div
+        class="card"
+        *ngFor="let ejercicio of ejercicios"
+        [class.selected]="ejercicio.selected"
+        (click)="toggleSeleccion(ejercicio)"
+      >
+        <div class="check">
+          <input type="checkbox" [(ngModel)]="ejercicio.selected" (click)="$event.stopPropagation()" />
+        </div>
+
+        <!-- IMAGEN DEL EJERCICIO -->
+        <div class="thumbnail" (click)="toggleSeleccion(ejercicio)">
+          <img [src]="ejercicio.imagen" [alt]="ejercicio.nombre" width="100">
+        </div>
+
+        <div class="info" (click)="toggleSeleccion(ejercicio)">
+          <h3>{{ ejercicio.nombre }}</h3>
+          
+          <!-- MÚSCULOS (Target Muscles) -->
+          <p class="musculos">
+            <strong>Músculos:</strong> {{ ejercicio.targetMuscles?.join(', ') }}
+          </p>
+
+          <!-- DETALLES (Tiempos y calorías calculados en el .ts) -->
+          <div class="details">
+            <span>⏱ {{ ejercicio.tiempo }} min</span>
+            <span>🔥 {{ ejercicio.calorias }} kcal</span>
+            <!-- La API no trae series/reps por defecto, usamos valores fijos o calculados -->
+            <span>4 series</span>
+            <span>12 reps</span>
+          </div>
+
+          <!-- SECCIÓN DE VIDEO (Solo aparecerá si el ejercicio tiene videoUrl) -->
+          <div *ngIf="ejercicio.videoUrl" class="video-preview">
+            <video controls width="100%" (click)="$event.stopPropagation()">
+              <source [src]="ejercicio.videoUrl" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- INSTRUCCIONES (Paso a paso) -->
+          <div *ngIf="ejercicio.instructions" class="instrucciones-lista">
+            <h4>Pasos:</h4>
+            <ol>
+              <li *ngFor="let paso of ejercicio.instructions">{{ paso }}</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="nivel" [ngClass]="ejercicio.exerciseType?.toLowerCase()">
+          {{ ejercicio.exerciseType }}
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="panel">
+        <h3>Tu Rutina</h3>
+
+        <div class="stat">
+          <p>Ejercicios seleccionados</p>
+          <h2>{{ ejerciciosSeleccionados.length }}</h2>
+        </div>
+
+        <div class="stat calorias">
+          <p>Calorías totales</p>
+          <h2>{{ totalCaloriasSeleccionadas }} kcal</h2>
+        </div>
+
+        <button class="btn-start" [disabled]="ejerciciosSeleccionados.length === 0">
+          Iniciar Rutina ({{ ejerciciosSeleccionados.length }})
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="container">
+  <div class="header">
+    <button class="btn-back" routerLink="/pagina_principal">← Volver</button>
+
+    <div class="title">
+      <h1>Entrenamiento de {{ tipo | titlecase }}</h1>
+      <div class="meta">
+        <span>⏱ {{ totalTiempo }} min</span>
+        <span>🔥 {{ totalCalorias }} kcal</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="lista">
+      <div class="lista-header">
+        <h2>Lista de Ejercicios</h2>
+        <div class="actions">
+          <button (click)="seleccionarTodos()">Seleccionar todos</button>
+          <button (click)="limpiarSeleccion()">Limpiar</button>
+        </div>
+      </div>
+
       <div
         class="card"
         *ngFor="let ejercicio of ejercicios"
@@ -67,4 +169,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
