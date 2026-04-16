@@ -18,14 +18,10 @@ export class SmartwatchService {
 
   getDatosGoogleFit(token: string): Observable<any> {
     const url = 'https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate';
-    
-    // Agregamos el Content-Type explícitamente
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json'
     });
-
-    // Calculamos el inicio del día de hoy (00:00:00) para que traiga datos frescos
     const hoy = new Date();
     hoy.setHours(0, 0, 0, 0);
     const startTime = hoy.getTime();
@@ -34,7 +30,6 @@ export class SmartwatchService {
     const body = {
       aggregateBy: [{
         dataTypeName: 'com.google.step_count.delta' 
-        // NOTA: Borramos la línea de dataSourceId para que Google busque en TODO
       }],
       bucketByTime: { durationMillis: 86400000 },
       startTimeMillis: startTime,
