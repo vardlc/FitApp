@@ -38,7 +38,7 @@ export class Login {
 
         localStorage.setItem('usuario', JSON.stringify(res));
 
-        this.router.navigate(['/pagina_principal']);
+        this.router.navigate(['/pagina-principal']);
       },
       error: (err) => {
         console.log('Credenciales incorrectas', err);

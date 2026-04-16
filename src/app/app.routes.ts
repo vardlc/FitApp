@@ -10,7 +10,7 @@ export const routes: Routes = [
   { path: 'login', component: Login },
   { path: 'registro', component: Registro},
   { path: 'recuperar-contrasena', component: RecuperarContrasena},
-  { path: 'pagina_principal', component: PaginaPrincipal},
+  { path: 'pagina-principal', component: PaginaPrincipal},
   { path: 'recuperarContrasena', component: RecuperarContrasena },
   { path: 'ejercicios/:tipo', component: Ejercicios}
 ];
