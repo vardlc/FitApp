@@ -1,139 +1,203 @@
 <div class="dashboard">
-  <section class="auth-section" *ngIf="!isLoggedIn">
-    <div class="auth-card">
-      <h2>Bienvenido a tu App de Fitness</h2>
-      <p>Conecta tu cuenta de Google para sincronizar los datos de tu Smartwatch en tiempo real.</p>
-      <button (click)="loginConGoogle()" class="google-btn">
-        <img src="https://fonts.gstatic.com/s/i/productlogos/googleg/v6/24px.svg" alt="G">
-        Conectar con Google Fit
-      </button>
-    </div>
-  </section>
 
-  <section class="user-card" *ngIf="isLoggedIn">
-    
-    <div class="user-header">
-      <div class="user-info">
-        <div class="avatar">👤</div>
-        <div>
-          <h2>Hola, Adolfo Javier</h2>
-          <p>¡Tus datos están sincronizados!</p>
-        </div>
-      </div>
+  <section class="holo-layout">
 
-      <button class="toggle-btn" (click)="toggleDetalles()">
-        {{ mostrarDetalles ? '▲' : '▼' }}
-      </button>
-    </div>
-
-    <div class="stats">
-      <div class="stat">
-        <span class="icon blue">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-            <path d="M2 10h3v4H2v-4zm4-2h2v8H6V8zm10 0h2v8h-2V8zm4 2h3v4h-3v-4zM8 11h8v2H8v-2z" />
-          </svg>
-        </span>
-        <p>Peso</p>
-        <h3>80 <span>kg</span></h3>
-      </div>
-
-      <div class="stat">
-        <span class="icon purple">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-            <path d="M12 2a2 2 0 100 4 2 2 0 000-4zm-1 5h2v14h-2V7zM6 5v14h2V5H6zm10 0v14h2V5h-2z" />
-          </svg>
-        </span>
-        <p>Altura</p>
-        <h3>160 <span>cm</span></h3>
-      </div>
-
-      <div class="stat">
-        <span class="icon pink">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-            <path d="M12 3c.6 0 1 .4 1 1v1h2a2 2 0 012 2v3H7V7a2 2 0 012-2h2V4c0-.6.4-1 1-1zm-5 9h10v7a2 2 0 01-2 2H9a2 2 0 01-2-2v-7z" />
-          </svg>
-        </span>
-        <p>Edad</p>
-        <h3>23 <span>años</span></h3>
-      </div>
-    </div>
-
-    <section class="smartwatch" *ngIf="mostrarDetalles && datosWatch">
-      <h3 class="section-title">Datos en Tiempo Real</h3>
-
-      <div class="watch-grid">
-        <div class="watch-card">
-          <span class="icon heart">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-              <path d="M12 21s-7-4.3-9-8.3C1.6 8.7 4 6 7.2 6c1.8 0 3.2 1 4.8 3 1.6-2 3-3 4.8-3C20 6 22.4 8.7 21 12.7 19 16.7 12 21 12 21z" />
+    <aside class="side-panel left-panel">
+      <div class="panel-glow"></div>
+      <div class="panel-content">
+        <div class="side-stat">
+          <span class="icon blue">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M2 10h3v4H2v-4zm4-2h2v8H6V8zm10 0h2v8h-2V8zm4 2h3v4h-3v-4zM8 11h8v2H8v-2z" />
             </svg>
           </span>
-          <p>Frecuencia Cardíaca</p>
-          <h2>{{ datosWatch.frecuenciaCardiaca }} <span>bpm</span></h2>
+          <div>
+            <p>Peso</p>
+            <h3>80 <span>kg</span></h3>
+          </div>
         </div>
 
-        <div class="watch-card">
-          <span class="icon blue">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+        <div class="side-stat">
+          <span class="icon purple">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M12 2a2 2 0 100 4 2 2 0 000-4zm-1 5h2v14h-2V7zM6 5v14h2V5H6zm10 0v14h2V5h-2z" />
+            </svg>
+          </span>
+          <div>
+            <p>Altura</p>
+            <h3>160 <span>cm</span></h3>
+          </div>
+        </div>
+
+        <div class="side-stat">
+          <span class="icon pink">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M12 3c.6 0 1 .4 1 1v1h2a2 2 0 012 2v3H7V7a2 2 0 012-2h2V4c0-.6.4-1 1-1zm-5 9h10v7a2 2 0 01-2 2H9a2 2 0 01-2-2v-7z" />
+            </svg>
+          </span>
+          <div>
+            <p>Edad</p>
+            <h3>23 <span>años</span></h3>
+          </div>
+        </div>
+
+        <div class="side-exercise pesas-card" routerLink="/ejercicios/pesas">
+          <h4>Tus Ejercicios</h4>
+          <div class="exercise-img-box">
+            <div class="img-placeholder">🏋</div>
+          </div>
+          <h3>Pesas</h3>
+          <div class="corner-icons">
+            <span class="icon blue sm">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                <path d="M2 10h3v4H2v-4zm4-2h2v8H6V8zm10 0h2v8h-2V8zm4 2h3v4h-3v-4zM8 11h8v2H8v-2z" />
+              </svg>
+            </span>
+            <span class="icon purple sm">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                <path d="M12 2a2 2 0 100 4 2 2 0 000-4zm-1 5h2v14h-2V7zM6 5v14h2V5H6zm10 0v14h2V5h-2z" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="center-panel">
+      <div class="panel-glow center-glow"></div>
+
+      <div class="user-header">
+        <div class="user-info">
+          <div class="avatar">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" style="color:#00e0ff">
               <path d="M7 13c1.7 0 3-1.3 3-3S8.7 7 7 7 4 8.3 4 10s1.3 3 3 3zm7 4c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3z" />
             </svg>
-          </span>
-          <p>Pasos Hoy</p>
-          <h2>{{ datosWatch.pasosHoy | number }} <span>pasos</span></h2>
+          </div>
+          <div>
+            <h2>Hola, Adolfo Javier</h2>
+            <p>Resumen de tu actividad física</p>
+          </div>
         </div>
+        <button class="toggle-btn" (click)="toggleDetalles()">
+          {{ mostrarDetalles ? '▲' : '▼' }}
+        </button>
+      </div>
 
-        <div class="watch-card">
-          <span class="icon orange">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-              <path d="M13 2s3 3 3 6a4 4 0 01-8 0c0-3 5-6 5-6zm-1 9a6 6 0 016 6 6 6 0 11-12 0 6 6 0 016-6z" />
+      <div class="stats">
+        <div class="stat">
+          <span class="icon blue">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M2 10h3v4H2v-4zm4-2h2v8H6V8zm10 0h2v8h-2V8zm4 2h3v4h-3v-4zM8 11h8v2H8v-2z" />
             </svg>
           </span>
-          <p>Calorías Quemadas</p>
-          <h2>{{ datosWatch.caloriasQuemadas }} <span>kcal</span></h2>
+          <p>Peso</p>
+          <h3>80 <span>kg</span></h3>
+        </div>
+        <div class="stat">
+          <span class="icon purple">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M12 2a2 2 0 100 4 2 2 0 000-4zm-1 5h2v14h-2V7zM6 5v14h2V5H6zm10 0v14h2V5h-2z" />
+            </svg>
+          </span>
+          <p>Altura</p>
+          <h3>160 <span>cm</span></h3>
+        </div>
+        <div class="stat">
+          <span class="icon pink">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M12 3c.6 0 1 .4 1 1v1h2a2 2 0 012 2v3H7V7a2 2 0 012-2h2V4c0-.6.4-1 1-1zm-5 9h10v7a2 2 0 01-2 2H9a2 2 0 01-2-2v-7z" />
+            </svg>
+          </span>
+          <p>Edad</p>
+          <h3>23 <span>años</span></h3>
         </div>
       </div>
-    </section>
 
-    <br />
-    <section class="calendar">
-      <div class="calendar-header">
-        <h3>Calendario de Rutinas</h3>
-        <span>Marzo 2026</span>
-      </div>
-      <div class="weekdays">
-        <span>Dom</span><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span>
-      </div>
-      <div class="days">
-        <div class="day completed">22</div>
-        <div class="day">23</div>
-        <div class="day">24</div>
-        <div class="day completed">25</div>
-        <div class="day">26</div>
-        <div class="day">27</div>
-        <div class="day">28</div>
-      </div>
-    </section>
+      <section class="smartwatch" *ngIf="mostrarDetalles">
+        <h3 class="section-title">Datos Recientes</h3>
+        <div class="watch-grid">
+          <div class="watch-card">
+            <span class="icon heart">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path d="M12 21s-7-4.3-9-8.3C1.6 8.7 4 6 7.2 6c1.8 0 3.2 1 4.8 3 1.6-2 3-3 4.8-3C20 6 22.4 8.7 21 12.7 19 16.7 12 21 12 21z" />
+              </svg>
+            </span>
+            <p>Frecuencia Cardíaca</p>
+            <h2>-- <span>bpm</span></h2>
+          </div>
+          <div class="watch-card">
+            <span class="icon blue">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path d="M7 13c1.7 0 3-1.3 3-3S8.7 7 7 7 4 8.3 4 10s1.3 3 3 3zm7 4c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3z" />
+              </svg>
+            </span>
+            <p>Pasos Hoy</p>
+            <h2>0 <span>pasos</span></h2>
+          </div>
+          <div class="watch-card">
+            <span class="icon orange">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path d="M13 2s3 3 3 6a4 4 0 01-8 0c0-3 5-6 5-6zm-1 9a6 6 0 016 6 6 6 0 11-12 0 6 6 0 016-6z" />
+              </svg>
+            </span>
+            <p>Calorías Quemadas</p>
+            <h2>0 <span>kcal</span></h2>
+          </div>
+        </div>
+      </section>
 
-    <section class="exercises">
-      <h3 class="section-title">Tus Ejercicios</h3>
-      <div class="cards">
-        <div class="exercise-card pesas">
-          <div class="icon-box">🏋</div>
-          <h4>Pesas</h4>
-          <p>Fuerza y resistencia</p>
-          <div class="info"><span>⏱ 45 min</span><span>🔥 350 kcal</span></div>
-          <button routerLink="/ejercicios/pesas">Iniciar</button>
+      <section class="calendar">
+        <div class="calendar-header">
+          <h3>Calendario de Rutinas</h3>
+          <span>Abril 2026</span>
+        </div>
+        <div class="weekdays">
+          <span>Dom</span><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span>
+        </div>
+        <div class="days">
+          <div class="day completed">22</div>
+          <div class="day">23</div>
+          <div class="day">24</div>
+          <div class="day completed">25</div>
+          <div class="day">26</div>
+          <div class="day">27</div>
+          <div class="day">28</div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="side-panel right-panel">
+      <div class="panel-glow right-glow"></div>
+      <div class="panel-content">
+        <div class="right-realtime">
+          <h4>Estado del Dispositivo</h4>
+          <div class="rt-stat">
+            <span class="icon heart lg">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+                <path d="M12 21s-7-4.3-9-8.3C1.6 8.7 4 6 7.2 6c1.8 0 3.2 1 4.8 3 1.6-2 3-3 4.8-3C20 6 22.4 8.7 21 12.7 19 16.7 12 21 12 21z" />
+              </svg>
+            </span>
+            <p>Sin conexión</p>
+            <h2>-- <span>bpm</span></h2>
+          </div>
         </div>
 
-        <div class="exercise-card atletismo">
-          <div class="icon-box">👟</div>
-          <h4>Atletismo</h4>
-          <p>Carrera y velocidad</p>
-          <div class="info"><span>⏱ 30 min</span><span>🔥 280 kcal</span></div>
-          <button routerLink="/ejercicios/atletismo">Iniciar</button>
+        <div class="side-exercise atletismo-card">
+          <h4>Tus Ejercicios</h4>
+          <div class="exercise-img-box">
+            <div class="img-placeholder atletismo-img">👟</div>
+          </div>
+          <h3>Atletismo</h3>
+          <div class="corner-icons">
+            <span class="icon pink sm">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                <path d="M12 3c.6 0 1 .4 1 1v1h2a2 2 0 012 2v3H7V7a2 2 0 012-2h2V4c0-.6.4-1 1-1zm-5 9h10v7a2 2 0 01-2 2H9a2 2 0 01-2-2v-7z" />
+              </svg>
+            </span>
+          </div>
         </div>
       </div>
-    </section>
+    </aside>
 
   </section>
 </div>
