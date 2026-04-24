@@ -111,14 +111,26 @@
       <form (ngSubmit)="login()" #form="ngForm">
         <!-- EMAIL -->
         <div class="input-group">
-          <input type="email" required [(ngModel)]="email" name="email" />
+          <input
+            type="email"
+            required
+            [(ngModel)]="email"
+            name="email"
+            autocomplete="new-password"
+          />
           <label>Correo electrónico</label>
           <span class="input-bar"></span>
         </div>
 
         <!-- PASSWORD -->
         <div class="input-group">
-          <input type="password" required [(ngModel)]="password" name="password" />
+          <input
+            type="password"
+            required
+            [(ngModel)]="password"
+            name="password"
+            autocomplete="new-password"
+          />
           <label>Contraseña</label>
           <span class="input-bar"></span>
         </div>

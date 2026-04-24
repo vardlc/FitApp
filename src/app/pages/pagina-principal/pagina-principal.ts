@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID, ChangeDetectorRef } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-pagina-principal',
@@ -9,12 +9,24 @@ import { CommonModule } from '@angular/common';
   templateUrl: './pagina-principal.html',
   styleUrls: ['./pagina-principal.css']
 })
-export class PaginaPrincipal {
+export class PaginaPrincipal implements OnInit {
+  mostrarDetalles = true;
 
-  mostrarDetalles = false;
+  constructor(
+    private cdr: ChangeDetectorRef,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
-  toggleDetalles(){
-    this.mostrarDetalles = !this.mostrarDetalles;
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      // Aquí puedes inicializar otras cosas que requieran 'window' o 'document'
+      console.log('Componente cargado en el navegador');
+    }
   }
 
+  toggleDetalles(): void {
+    this.mostrarDetalles = !this.mostrarDetalles;
+    // Forzamos la detección de cambios si es necesario tras el toggle
+    this.cdr.detectChanges();
+  }
 }

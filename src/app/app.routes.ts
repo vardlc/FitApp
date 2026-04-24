@@ -4,13 +4,15 @@ import { Registro } from './auth/registro/registro';
 import { PaginaPrincipal } from './pages/pagina-principal/pagina-principal';
 import { RecuperarContrasena } from './auth/recuperar-contrasena/recuperar-contrasena';
 import { Ejercicios } from './pages/ejercicios/ejercicios';
+import { Clientes} from  './pages/clientes/clientes'
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: Login },
   { path: 'registro', component: Registro},
   { path: 'recuperar-contrasena', component: RecuperarContrasena},
-  { path: 'pagina_principal', component: PaginaPrincipal},
+  { path: 'pagina-principal', component: PaginaPrincipal},
   { path: 'recuperarContrasena', component: RecuperarContrasena },
-  { path: 'ejercicios/:tipo', component: Ejercicios}
+  { path: 'ejercicios/:tipo', component: Ejercicios},
+  { path: 'Clientes', component: Clientes}
 ];
