@@ -15,9 +15,9 @@ export class ClienteService {
     return this.http.post(`${this.authURL}/login`, data);
   }
 
-  getClientes(): Observable<any> {
-    return this.http.get(this.apiURL);
-  }
+  // getClientes(): Observable<any> {
+  //   return this.http.get(this.apiURL);
+  // }
 
   register(data: any): Observable<any> {
     return this.http.post(`${this.authURL}/register`, data);
