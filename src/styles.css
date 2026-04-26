@@ -2,6 +2,8 @@ html, body {
   font-family: Arial, sans-serif;
   text-align: center;
   overscroll-behavior: none;
+  overflow: hidden; 
+  height: 100%;
 }
 
 body {

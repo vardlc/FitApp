@@ -34,7 +34,6 @@ export class Ejercicios implements OnInit {
       next: (res) => {
         if (res.success && res.data.length > 0) {
           
-          // Mapeamos los datos para que coincidan con tu HTML
           this.ejercicios = res.data.map((e: any) => ({
             ...e,
             nombre: e.name,              
@@ -47,7 +46,6 @@ export class Ejercicios implements OnInit {
             targetMuscles: e.targetMuscles || []
           }));
           
-          // Opcional: Cargamos el detalle del primero por defecto para que no se vea vacío
           this.cargarDetalleEjercicio(this.ejercicios[0]);
 
         } else {
@@ -60,7 +58,7 @@ export class Ejercicios implements OnInit {
 
   // Función para traer Video e Instrucciones de un ejercicio específico
   cargarDetalleEjercicio(ejercicio: any) {
-    if (!ejercicio.exerciseId || ejercicio.videoUrl) return; // Si ya tiene video, no pedirlo otra vez
+    if (!ejercicio.exerciseId || ejercicio.videoUrl) return; 
 
     this.ejerciciosService.getExerciseById(ejercicio.exerciseId).subscribe({
       next: (detalleRes) => {
@@ -97,7 +95,6 @@ export class Ejercicios implements OnInit {
   toggleSeleccion(ejercicio: any) {
     ejercicio.selected = !ejercicio.selected;
 
-    // Si el usuario lo selecciona, cargamos su video e instrucciones automáticamente
     if (ejercicio.selected) {
       this.cargarDetalleEjercicio(ejercicio);
     }
@@ -106,7 +103,7 @@ export class Ejercicios implements OnInit {
   seleccionarTodos() {
     this.ejercicios.forEach(e => {
       e.selected = true;
-      this.cargarDetalleEjercicio(e); // Carga masiva de detalles
+      this.cargarDetalleEjercicio(e);
     });
   }
 
