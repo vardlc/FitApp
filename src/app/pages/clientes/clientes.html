@@ -1,78 +1,64 @@
-<div class="panel">
+<div class="dashboard-wrapper">
+  <div class="panel dashboard-cyber">
 
-
-  <header class="header">
-    <h2>💪 Mi Panel</h2>
-    <button class="logout">⎋ Cerrar Sesión</button>
-  </header>
-
-  <section class="cards">
-    <div class="card">
-      <div class="icon fire">🔥</div>
-      <div>
-        <p>Racha Actual</p>
-        <h3>0</h3>
+    <header class="header">
+      <div class="brand">
+        <h2 class="main-title"><span class="highlight">💪 MI PANEL</span></h2>
       </div>
-    </div>
+      <button class="logout-btn">
+        ⎋ <span class="hide-mobile">Cerrar Sesión</span>
+      </button>
+    </header>
 
-    <div class="card">
-      <div class="icon check">✔</div>
-      <div>
-        <p>Días Completados</p>
-        <h3>0</h3>
+    <main class="main-content">
+      <section class="cards-grid">
+        <div class="glass-card stat-card">
+          <div class="icon-glow check-icon">✔</div>
+          <div class="stat-info">
+            <p class="text-secondary">Días Completados</p>
+            <h3 class="stat-value">0</h3>
+          </div>
+        </div>
+
+        <div class="glass-card stat-card">
+          <div class="icon-glow dumbbell-icon">🏋️</div>
+          <div class="stat-info">
+            <p class="text-secondary">Rutinas Activas</p>
+            <h3 class="stat-value">0</h3>
+          </div>
+        </div>
+      </section>
+
+      <div class="bottom-grid">
+        <section class="rutinas">
+          <h3 class="section-title">Mis Rutinas</h3>
+          <div class="rutina-box glass-card">
+            <div class="empty-state">
+              <span class="mega-icon">🏋️‍♂️</span>
+              <p class="text-secondary">No tienes <span class="accent">rutinas</span> asignadas aún.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="seguimiento">
+          <h3 class="section-title">📅 Seguimiento</h3>
+          <div class="calendar-card glass-card">
+            <div class="calendar-header">
+              <button class="nav-btn">‹</button>
+              <span class="month-year">Abril 2026</span>
+              <button class="nav-btn">›</button>
+            </div>
+            <div class="days-labels">
+              <span>Dom</span><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span>
+            </div>
+            <div class="grid">
+              <div class="day-slot"></div><div class="day-slot"></div><div class="day-slot"></div>
+              <div class="day-slot"></div><div class="day-slot"></div><div class="day-slot"></div>
+              <div class="day-slot"></div>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
-
-    <div class="card">
-      <div class="icon dumbbell">🏋️</div>
-      <div>
-        <p>Rutinas Activas</p>
-        <h3>0</h3>
-      </div>
-    </div>
-  </section>
-
-  <section class="rutinas">
-    <h3>Mis Rutinas</h3>
-
-    <div class="rutina-box">
-      <div class="empty">
-        <span class="big-icon">🏋️</span>
-        <p>No tienes <span>rutinas</span> asignadas aún.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="seguimiento">
-    <h3>📅 Seguimiento</h3>
-
-    <div class="calendar">
-      <div class="calendar-header">
-        <button>‹</button>
-        <span>Abril 2026</span>
-        <button>›</button>
-      </div>
-
-      <div class="days">
-        <span>Dom</span>
-        <span>Lun</span>
-        <span>Mar</span>
-        <span>Mié</span>
-        <span>Jue</span>
-        <span>Vie</span>
-        <span>Sáb</span>
-      </div>
-
-      <div class="grid">
-        <div class="day"></div>
-        <div class="day"></div>
-        <div class="day"></div>
-        <div class="day"></div>
-        <div class="day"></div>
-        <div class="day"></div>
-        <div class="day"></div>
-      </div>
-    </div>
-  </section>
-
+    </main>
+  </div>
 </div>

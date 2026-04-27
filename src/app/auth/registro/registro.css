@@ -2,38 +2,56 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-.logo-section{
-  margin-top: -40px;
-  
-  
+  box-sizing: border-box; 
 }
 
-.login-container{
-  height: 100vh;
+/* Contenedor principal: Ocupa toda la pantalla 2K */
+.login-container {
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 40px; 
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Caja central futurista expandida */
+.panel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 60px; 
+  width: 90%; 
+  max-width: 1600px;
+  padding: 4rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(0, 255, 255, 0.6);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5), inset 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.logo-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  flex: 1.8;
+  text-align: left;
 }
 
 /* From Uiverse.io by Nawsome */ 
 .svg-frame {
   position: relative;
-  width: 270px;
-  height: 250px;
-  margin-left: 120px;
+  width: 300px;
+  height: 300px;
   transform-style: preserve-3d;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.form-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 15px;
-  margin-top: 10px;
   justify-content: center;
   align-items: center;
 }
@@ -90,354 +108,130 @@
   }
 }
 
-.datos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5em;
-  border-radius: 25px;
-  padding: 0.6em;
-  border: none;
-  outline: none;
+/* Formulario Grid - Evita que las líneas se salgan */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 30px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+/* Tipografía */
+.panel h1, .panel h2 {
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px cyan, 0 0 20px cyan;
   color: white;
 }
 
-.input-icon {
-  height: 1.3em;
-  width: 1.3em;
-  fill: rgb(0, 255, 200);
-}
-
-/* Caja central futurista */
-.panel {
-  padding: 2rem 3rem;
-  background: rgba(0, 0, 0, 0.4);
-  border: 2px solid rgba(0, 255, 255, 0.6);
-  border-radius: 15px;
-  box-shadow:
-    0 0 20px rgba(0, 255, 255, 0.8),
-    inset 0 0 10px rgba(0, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  text-align: center;
-}
-
-.panel h1 {
-  font-size: 2rem;
-  text-shadow:
-    0 0 10px cyan,
-    0 0 20px cyan;
-}
-
-.panel h2 {
-  font-size: 2rem;
-  text-shadow:
-    0 0 10px cyan,
-    0 0 20px cyan;
-}
-
-.panel p {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
+.panel p, .panel label {
+  font-size: 1.2rem;
   color: #aef;
 }
 
-.panel label {
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  color: #aef;
-}
-
-#registro{
-      margin-top: 1rem;
-  font-size: 1.1rem;
-  color: #aef;
-}
-
-.input-group{
-  margin-top: 5px;
+/* Inputs y Grupos */
+.input-group {
   position: relative;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.input-group input{
+.input-group input {
   width: 100%;
   background: transparent;
   border: none;
   border-bottom: 2px solid rgba(255,255,255,0.35);
-  padding: 16px 0 6px 0; /* más espacio arriba */
-  font-size: 16px;
+  padding: 10px 0;
+  font-size: 1.1rem;
   color: white;
   outline: none;
 }
 
-/* LABEL */
-.input-group label{
+.input-group label {
   position: absolute;
   left: 0;
-  top: -2px; /* antes 12px */
-  font-size: 15px;
+  top: 10px;
+  font-size: 1rem;
   color: rgba(255,255,255,0.7);
   pointer-events: none;
   transition: 0.25s ease;
 }
 
-/* cuando escribes */
 .input-group input:focus ~ label,
-.input-group input:valid ~ label{
+.input-group input:valid ~ label {
   top: -20px;
-  font-size: 12px;
+  font-size: 0.85rem;
   color: #7fffd4;
 }
 
-/* barra */
-.input-bar{
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-}
-
-.input-bar::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 100%;
-  background: #7fffd4;
-  box-shadow: 0 0 8px #7fffd4, 0 0 15px #7fffd4;
-  transition: width 0.35s ease;
-}
-
-.input-group input:focus ~ .input-bar::after{
+/* Botones Corregidos y Alineados */
+.botones {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
   width: 100%;
 }
 
-
-.iniciar{
+.iniciar, .Regresar {
+  flex: 1; /* Ambos miden lo mismo */
   position: relative;
-  padding: 14px 40px;
-  font-size: 1rem;
+  padding: 15px 25px; /* Más compactos y estilizados */
+  font-size: 0.9rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
-
   color: #aef;
   background: rgba(0, 30, 40, 0.7);
   border: none;
   border-radius: 6px;
-
   overflow: hidden;
-
-  box-shadow:
-    0 0 10px rgba(0,255,255,0.3),
-    inset 0 0 10px rgba(0,255,255,0.2);
-
   transition: all .3s ease;
+  margin: 0; /* Eliminado el margen izquierdo de 100px */
 }
 
-/* efecto al pasar el mouse */
-.iniciar:hover{
+.iniciar:hover, .Regresar:hover {
   background: rgba(0, 40, 60, 0.9);
-
-  box-shadow:
-    0 0 15px cyan,
-    0 0 30px cyan,
-    inset 0 0 10px rgba(0,255,255,0.4);
-
+  box-shadow: 0 0 20px cyan;
   transform: translateY(-2px);
 }
 
-/* efecto al hacer click */
+/* Líneas de Neón Animadas */
+.iniciar span, .Regresar span { position: absolute; display: block; }
 
-.iniciar{
-  margin-top: 20px;
-  margin-left: 100px;
-}
-
-.iniciar:active{
-  transform: translateY(1px);
-  box-shadow:
-    0 0 8px cyan,
-    inset 0 0 8px rgba(0,255,255,0.5);
-}
-
-.iniciar span{
-  position: absolute;
-  display: block;
-}
-
-/* línea superior */
-.iniciar  span:nth-child(1){
-  top:0;
-  left:0;
-  width:100%;
-  height:2px;
+.iniciar span:nth-child(1), .Regresar span:nth-child(1) {
+  top:0; left:0; width:100%; height:2px;
   background: linear-gradient(to left, transparent, cyan);
-  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
   animation: lineaArriba 2s linear infinite;
 }
-
-@keyframes lineaArriba{
-  0%{transform: translateX(100%);}
-  100%{transform: translateX(-100%);}
-}
-
-/* línea derecha */
-.iniciar span:nth-child(2){
-  top:0;
-  right:0;
-  width:2px;
-  height:100%;
+.iniciar span:nth-child(2), .Regresar span:nth-child(2) {
+  top:0; right:0; width:2px; height:100%;
   background: linear-gradient(to top, transparent, cyan);
-  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
   animation: lineaDerecha 2s linear -1s infinite;
 }
-
-@keyframes lineaDerecha{
-  0%{transform: translateY(100%);}
-  100%{transform: translateY(-100%);}
-}
-
-/* línea inferior */
-.iniciar span:nth-child(3){
-  bottom:0;
-  left:0;
-  width:100%;
-  height:2px;
+.iniciar span:nth-child(3), .Regresar span:nth-child(3) {
+  bottom:0; left:0; width:100%; height:2px;
   background: linear-gradient(to right, transparent, cyan);
-  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
   animation: lineaAbajo 2s linear infinite;
 }
-
-@keyframes lineaAbajo{
-  0%{transform: translateX(-100%);}
-  100%{transform: translateX(100%);}
-}
-
-/* línea izquierda */
-.iniciar span:nth-child(4){
-  top:0;
-  left:0;
-  width:2px;
-  height:100%;
+.iniciar span:nth-child(4), .Regresar span:nth-child(4) {
+  top:0; left:0; width:2px; height:100%;
   background: linear-gradient(to bottom, transparent, cyan);
-  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
   animation: lineaIzquierda 2s linear -1s infinite;
 }
 
-@keyframes lineaIzquierda{
-  0%{transform: translateY(-100%);}
-  100%{transform: translateY(100%);}
-}
+@keyframes lineaArriba { 0%{transform: translateX(100%);} 100%{transform: translateX(-100%);} }
+@keyframes lineaDerecha { 0%{transform: translateY(100%);} 100%{transform: translateY(-100%);} }
+@keyframes lineaAbajo { 0%{transform: translateX(-100%);} 100%{transform: translateX(100%);} }
+@keyframes lineaIzquierda { 0%{transform: translateY(-100%);} 100%{transform: translateY(100%);} }
 
-/* Animaciones */
-@keyframes moveGradient {
-  0% {
-    transform: translateX(0);
+/* Responsivo */
+@media (max-width: 1100px) {
+  .panel {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 30px;
   }
-  100% {
-    transform: translateX(-50px);
-  }
-}
-
-@keyframes moveStars {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-50px, -50px);
-  }
-}
-
-.Regresar{
-  position: relative;
-  padding: 14px 40px;
-  font-size: 1rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-
-  color: #aef;
-  background: rgba(0, 30, 40, 0.7);
-  border: none;
-  border-radius: 6px;
-
-  overflow: hidden;
-
-  box-shadow:
-    0 0 10px rgba(0,255,255,0.3),
-    inset 0 0 10px rgba(0,255,255,0.2);
-
-  transition: all .3s ease;
-}
-
-/* efecto al pasar el mouse */
-.Regresar:hover{
-  background: rgba(0, 40, 60, 0.9);
-
-  box-shadow:
-    0 0 15px cyan,
-    0 0 30px cyan,
-    inset 0 0 10px rgba(0,255,255,0.4);
-
-  transform: translateY(-2px);
-}
-
-
-.Regresar:active{
-  transform: translateY(1px);
-  box-shadow:
-    0 0 8px cyan,
-    inset 0 0 8px rgba(0,255,255,0.5);
-}
-
-.Regresar span{
-  position: absolute;
-  display: block;
-}
-
-
-
-.Regresar  span:nth-child(1){
-  top:0;
-  left:0;
-  width:100%;
-  height:2px;
-  background: linear-gradient(to left, transparent, cyan);
-  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
-  animation: lineaArriba 2s linear infinite;
-}
-
-.Regresar span:nth-child(2){
-  top:0;
-  right:0;
-  width:2px;
-  height:100%;
-  background: linear-gradient(to top, transparent, cyan);
-  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
-  animation: lineaDerecha 2s linear -1s infinite;
-}
-
-.Regresar span:nth-child(3){
-  bottom:0;
-  left:0;
-  width:100%;
-  height:2px;
-  background: linear-gradient(to right, transparent, cyan);
-  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
-  animation: lineaAbajo 2s linear infinite;
-}
-
-.Regresar span:nth-child(4){
-  top:0;
-  left:0;
-  width:2px;
-  height:100%;
-  background: linear-gradient(to bottom, transparent, cyan);
-  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
-  animation: lineaIzquierda 2s linear -1s infinite;
+  .form-grid { grid-template-columns: 1fr; }
+  .logo-section, .login { width: 100%; }
 }

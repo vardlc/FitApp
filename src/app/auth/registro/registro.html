@@ -1,96 +1,6 @@
-<!-- <section class="registro-container">
-
-  <div class="registro-card">
-
-    <div class="panel panel-cuenta">
-
-      <div class="panel-header">
-        <h1>Crear cuenta</h1>
-        <p>Comienza tu seguimiento de salud</p>
-      </div>
-
-      <form>
-
-  <div class="input-group">
-    <label>Nombre completo</label>
-    <div class="input-line">
-      <input type="text" [(ngModel)]="nombre" name="nombre">
-      <span></span>
-    </div>
-  </div>
-
-  <div class="input-group">
-    <label>Correo electrónico</label>
-    <div class="input-line">
-      <input type="email" [(ngModel)]="correo" name="correo">
-      <span></span>
-    </div>
-  </div>
-
-  <div class="input-group">
-    <label>Contraseña</label>
-    <div class="input-line">
-      <input type="password" [(ngModel)]="password" name="password">
-      <span></span>
-    </div>
-  </div>
-
-  <div class="input-group">
-    <label>Confirmar contraseña</label>
-    <div class="input-line">
-      <input type="password" [(ngModel)]="confirmarPassword" name="confirmarPassword">
-      <span></span>
-    </div>
-  </div>
-
-</form>
-
-    </div>
-
-
-    <div class="panel panel-salud" *ngIf="formCompleto()">
-
-      <div class="panel-header">
-        <h1>Datos de salud</h1>
-        <p>Información básica</p>
-      </div>
-
-      <div class="salud-grid">
-
-        <div class="input-group">
-          <label>Peso (kg)</label>
-          <input type="number">
-        </div>
-
-        <div class="input-group">
-          <label>Altura (cm)</label>
-          <input type="number">
-        </div>
-
-        <div class="input-group">
-          <label>Edad</label>
-          <input type="number">
-        </div>
-
-      </div>
-
-      <button>Crear cuenta</button>
-
-    </div>
-
-  </div>
-
-  <p class="login-link">
-    ¿Ya tienes cuenta?
-    <a routerLink="/login">Inicia sesión</a>
-  </p>
-
-</section> -->
-
 <div class="login-container">
   <div class="panel">
     <div class="logo-section">
-      <!-- From Uiverse.io by Nawsome -->
       <div class="svg-frame">
         <svg style="--i: 0; --j: 0">
           <g id="out1">
@@ -198,17 +108,22 @@
     <div class="login">
       <h2>Registro</h2>
 
+      <div class="role-selector">
+        <label>¿Cómo quieres unirte?</label>
+        <div class="radio-group">
+          <input type="radio" id="cliente" name="rol" value="cliente" [(ngModel)]="rol" checked>
+          <label for="cliente">Cliente</label>
+          
+          <input type="radio" id="coach" name="rol" value="coach" [(ngModel)]="rol">
+          <label for="coach">Coach</label>
+        </div>
+      </div>
+
       <form (ngSubmit)="registrar()">
         <div class="form-grid">
           <div class="input-group">
             <input type="text" name="nombre" [(ngModel)]="nombre" required />
             <label>Nombre completo</label>
-            <span class="input-bar"></span>
-          </div>
-
-          <div class="input-group">
-            <input type="number" name="edad" [(ngModel)]="edad" required />
-            <label>Edad</label>
             <span class="input-bar"></span>
           </div>
 
@@ -219,20 +134,8 @@
           </div>
 
           <div class="input-group">
-            <input type="number" name="estatura" [(ngModel)]="estatura" required />
-            <label>Estatura (cm)</label>
-            <span class="input-bar"></span>
-          </div>
-
-          <div class="input-group">
             <input type="password" name="password" [(ngModel)]="password" required />
             <label>Contraseña</label>
-            <span class="input-bar"></span>
-          </div>
-
-          <div class="input-group">
-            <input type="number" name="peso" [(ngModel)]="peso" required />
-            <label>Peso (kg)</label>
             <span class="input-bar"></span>
           </div>
 
@@ -241,11 +144,36 @@
             <label>Confirmar contraseña</label>
             <span class="input-bar"></span>
           </div>
+
+          <ng-container *ngIf="rol === 'cliente'">
+            <div class="input-group">
+              <input type="number" name="edad" [(ngModel)]="edad" required />
+              <label>Edad</label>
+              <span class="input-bar"></span>
+            </div>
+
+            <div class="input-group">
+              <input type="number" name="estatura" [(ngModel)]="estatura" required />
+              <label>Estatura (cm)</label>
+              <span class="input-bar"></span>
+            </div>
+
+            <div class="input-group">
+              <input type="number" name="peso" [(ngModel)]="peso" required />
+              <label>Peso (kg)</label>
+              <span class="input-bar"></span>
+            </div>
+          </ng-container>
+
+          <div class="input-group" *ngIf="rol === 'coach'">
+            <input type="text" name="especialidad" [(ngModel)]="especialidad" required />
+            <label>Especialidad (Ej: Yoga, HIIT)</label>
+            <span class="input-bar"></span>
+          </div>
         </div>
 
         <div class="botones">
           <button type="button" class="Regresar" routerLink="/login">Regresar</button>
-
           <button type="submit" class="iniciar">Registrarse</button>
         </div>
       </form>
